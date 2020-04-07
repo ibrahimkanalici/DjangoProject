@@ -1,6 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
+from home.models import ContactFormMessage
 from product.models import Category, Product, Images
 
 

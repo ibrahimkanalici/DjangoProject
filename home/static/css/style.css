@@ -751,6 +751,7 @@ h3 {
 
 /* line 1, ../../Arafath/CL/December/229. Restaurant (Burger)/HTML/scss/_header.scss */
 .header-area {
+  background-color: #0c5460;
   position: absolute;
   left: 0;
   right: 0;
@@ -1095,7 +1096,8 @@ h3 {
   -webkit-transition: transform 500ms ease, background 500ms ease;
   box-shadow: 0px 3px 16px 0px rgba(0, 0, 0, 0.1);
   padding: 0px 150px;
-  background: #000;
+
+
 }
 
 @media (max-width: 767px) {
@@ -1133,7 +1135,8 @@ h3 {
 
 /* line 1, ../../Arafath/CL/December/229. Restaurant (Burger)/HTML/scss/_slider.scss */
 .slider_bg_1 {
-  background-image: url(../img/banner/banner.png);
+  background-image: url(../img/banner/blackBG.png);
+  margin-top: 100px;
 }
 
 /* line 4, ../../Arafath/CL/December/229. Restaurant (Burger)/HTML/scss/_slider.scss */
@@ -1149,7 +1152,7 @@ h3 {
 
 /* line 20, ../../Arafath/CL/December/229. Restaurant (Burger)/HTML/scss/_slider.scss */
 .slider_area .single_slider {
-  height: 900px;
+  height: 800px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -1219,6 +1222,7 @@ h3 {
   background-size: 100% 100%;
   display: inline-block;
   padding: 18px 42px;
+  margin-bottom: 20px;
 }
 
 /* line 64, ../../Arafath/CL/December/229. Restaurant (Burger)/HTML/scss/_slider.scss */
@@ -1231,11 +1235,11 @@ h3 {
 
 /* line 71, ../../Arafath/CL/December/229. Restaurant (Burger)/HTML/scss/_slider.scss */
 .slider_area .single_slider .slider_text h3 {
-  font-size: 100px;
+  font-size: 22px;
   text-transform: uppercase;
   font-weight: 400;
   line-height: 100px;
-  margin-bottom: 27px;
+  margin-bottom: 2px;
   color: #fff;
   font-family: "Paytone One", sans-serif;
 }
