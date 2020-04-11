@@ -1,0 +1,55 @@
+{% extends "homebase.html" %}
+
+{% block title %} {{ productdata.title }}  {% endblock %}
+{% block keywords %} {{ productdata.keywords }} {% endblock %}
+{% block description %} {{ productdata.description }}{% endblock %}
+
+
+{% block head %}
+
+    <link rel='shortcut icon' type='image/x-icon' href='{{ setting.icon.url }}'/>
+{% endblock %}
+
+
+{% block content %}
+    <!-- about_area_start -->
+    <div class="card">
+        <div class="container-fliud">
+            <div class="wrapper row">
+                <div class="preview col-md-6">
+                    <div class="preview-pic tab-content">
+
+                        <div class="tab-pane active" id="pic-1"><img src="{{ productdata.image.url }}"></div>
+
+                        {% for rs in images %}
+                            <div class="tab-pane" id="pic-2"><img src="{{ rs.image.url }}"></div>
+                        {% endfor %}
+                    </div>
+                    <ul class="preview-thumbnail nav nav-tabs">
+                        {% for rs in images %}
+                            <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="{{ rs.image.url }}"></a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="details col-md-6">
+                    <h3 class="product-title">{{ productdata.title }}</h3>
+                    <p class="product-description">{{ productdata.description }}</p>
+                    <h4 class="price">Fiyat: <span>{{ productdata.price }}₺</span></h4>
+                    <div class="control-group">
+                        <label class="control-label"><span>Alacağınız Adet:</span></label>
+                        <input type="number" name="shopcart[quantity]" class="span6" value="1" placeholder="Qty" max="{{ product.amount }}">
+                    </div>
+                    <div class="action">
+                        <button class="add-to-cart btn btn-default" type="button">Sepete Ekle</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- about_area_end -->
+
+
+
+
+{% endblock %}

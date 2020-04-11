@@ -10,16 +10,35 @@
                         <div class="main-menu  d-none d-lg-block">
                             <nav>
                                 <ul id="navigation">
-                                    <li><a class="active" href="index.html">Anasayfa</a></li>
+                                    <li><a class="active" href="/home">Anasayfa</a></li>
                                     <li><a href="Menu.html">Menü</a></li>
-
                                     <li><a href="#">Restoran <i class="ti-angle-down"></i></a>
                                         <ul class="submenu">
-                                            <li><a href="Menu.html">Burger King</a></li>
-                                            <li><a href="Menu.html">Menü</a></li>
+                                            {% load mptt_tags %}
+                                            <ul>
+                                                {% recursetree category %}
+                                                    <li class="submenu">
+                                                    <li><a class="dropdown-toggle" {% if not node.is_leaf_node %}
+                                                           data-toggle="dropdown"
+                                                           aria-expanded="true" {% endif %}
+                                                           href="/category/{{ node.slug }}"> {{ node.title }}</a>
+                                                        {% if not node.is_leaf_node %}
+
+                                                            <ul class="dropdown-menu pull-menu-right">
+                                                                <li>
+                                                                    <a href="/category/{{ node.slug }}">{{ children }}</a>
+                                                                </li>
+
+                                                            </ul>
+                                                        {% endif %}
+
+                                                    </li>
+                                                    </li>
+                                                {% endrecursetree %}
+                                            </ul>
+
                                         </ul>
                                     </li>
-
                                 </ul>
                             </nav>
                         </div>
@@ -27,20 +46,20 @@
                     <div class="col-xl-2 col-lg-2">
                         <div class="logo-img">
                             <a href="index.html">
-                                <img src="{% static 'img/logo.png'%}" alt="">
+                                <img src="{% static 'img/logo.png' %}" alt="">
                             </a>
                         </div>
                     </div>
                     <div class="col-xl-5 col-lg-5 d-none d-lg-block">
                         <div class="book_room">
                             <div class="main-menu  d-none d-lg-block">
-                            <nav>
-                                <ul>
-                                    <li><a href="/hakkimizda">Hakkımızda</a></li>
-                                    <li><a href="/referanslarimiz">Referanslar </a></li>
-                                    <li><a href="/iletisim">İletişim</a></li>
-                                </ul>
-                            </nav>
+                                <nav>
+                                    <ul>
+                                        <li><a href="/hakkimizda">Hakkımızda</a></li>
+                                        <li><a href="/referanslarimiz">Referanslar </a></li>
+                                        <li><a href="/iletisim">İletişim</a></li>
+                                    </ul>
+                                </nav>
                             </div>
 
                         </div>
