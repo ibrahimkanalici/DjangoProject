@@ -1938,6 +1938,7 @@ h3 {
     display: block;
     overflow: hidden;
 
+
 }
 
 @media (max-width: 767px) {
@@ -1962,10 +1963,6 @@ h3 {
     float: left;
     padding-left: 100px;
     padding-right: 100px;
-
-
-
-
 }
 
 @media (max-width: 767px) {
@@ -1973,6 +1970,7 @@ h3 {
     .Burger_President_area .Burger_President_here .single_Burger_President {
         width: 100%;
         margin-bottom: 30px;
+
     }
 }
 
@@ -1981,6 +1979,7 @@ h3 {
     .Burger_President_area .Burger_President_here .single_Burger_President {
         width: 100%;
         margin-bottom: 0px;
+
 
     }
 }
@@ -2027,6 +2026,9 @@ h3 {
     bottom: 0px;
     bottom: 60px;
     left: 70px;
+    top: 100px;
+
+
 }
 
 @media (max-width: 767px) {
@@ -2034,7 +2036,6 @@ h3 {
     .Burger_President_area .Burger_President_here .single_Burger_President .room_thumb .room_heading {
         left: 20px;
         bottom: 20px;
-
     }
 }
 
@@ -2043,6 +2044,7 @@ h3 {
     .Burger_President_area .Burger_President_here .single_Burger_President .room_thumb .room_heading {
         left: 30px;
         bottom: 30px;
+
     }
 }
 
@@ -2063,6 +2065,8 @@ h3 {
     display: block;
     position: relative;
     z-index: 8;
+
+
 
 }
 
@@ -2091,6 +2095,8 @@ h3 {
     font-family: "Montserrat", sans-serif;
     display: block;
     margin-bottom: 3px;
+
+
 
 }
 
@@ -2739,7 +2745,7 @@ h3 {
 
 /* line 1, ../../Arafath/CL/December/229. Restaurant (Burger)/HTML/scss/_delicious.scss */
 .best_burgers_area {
-    padding-bottom: 15px;
+    padding-bottom: 155555px;
     padding-top: 140px;
     background-image: url(../img/banner/burger_bg.png);
     background-size: cover;
@@ -2749,6 +2755,7 @@ h3 {
     background-repeat: no-repeat;
     width: 50%;
     float: left;
+
 
 }
 
@@ -2764,8 +2771,6 @@ h3 {
 /* line 12, ../../Arafath/CL/December/229. Restaurant (Burger)/HTML/scss/_delicious.scss */
 .best_burgers_area .single_delicious {
     margin-bottom: 35px;
-
-
 }
 
 @media (max-width: 767px) {
@@ -2852,6 +2857,7 @@ h3 {
     font-size: 24px;
     color: #F0542C;
     font-family: "Montserrat", sans-serif;
+
 
 }
 
@@ -5540,6 +5546,7 @@ h6 {
     border-color: #f0e9ff;
     color: #888888;
 }
+
 
 /* line 1024, ../../Arafath/CL/December/229. Restaurant (Burger)/HTML/scss/_blog.scss */
 .blog-pagination .page-item:last-child .page-link {

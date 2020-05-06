@@ -1,0 +1,93 @@
+{% extends "homebase.html" %}
+
+{% block title %} Shop Cart {% endblock %}
+{% block keywords %} {{ categorydata.keywords }} {% endblock %}
+{% block description %} {{ categorydata.description }}{% endblock %}
+
+
+{% block head %}
+
+    <link rel='shortcut icon' type='image/x-icon' href='{{ setting.icon.url }}'/>
+{% endblock %}
+
+
+{% block content %}
+    <!-- about_area_start -->
+
+
+    <div class="about_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-18">
+                    <div class="Burger_President_area">
+                        <div class="Burger_President_here">
+                            <div class="single_Burger_President">
+                                <form method="post" action="#">
+                                    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"
+                                          rel="stylesheet" id="bootstrap-css">
+                                    <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+                                    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+                                    <!------ Include the above in your HEAD tag ---------->
+
+                                    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"
+                                          rel="stylesheet">
+                                    <div class="container">
+                                        <table id="cart" class="table table-hover table-condensed">
+                                            <thead>
+                                            <tr>
+                                                <th style="width:50%">Product</th>
+                                                <th style="width:10%">Price</th>
+                                                <th style="width:8%">Quantity</th>
+                                                <th style="width:22%" class="text-center">Subtotal</th>
+                                                <th style="width:10%"></th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            {% for rs in shopcart %}
+                                                <tr>
+                                                    <td data-th="Product">
+                                                        <div class="row">
+                                                            <div class="col-sm-2 hidden-xs"><img
+                                                                    src="{{ rs.product.image.url }}" alt="..."
+                                                                    class="img-responsive"/></div>
+                                                            <div class="col-sm-10">
+                                                                <h4 class="nomargin">{{ rs.product }}</h4>
+                                                                <p>{{ rs.product.description }}</p>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td data-th="Price">{{ rs.product.price }}₺</td>
+                                                    <td data-th="Quantity">
+                                                        {{ rs.quantity }}
+                                                    </td>
+                                                    <td data-th="Subtotal" class="text-center">{{ rs.amount }}</td>
+                                                    <td class="text-right">
+                                                        <a href="/order/deletefromcart/{{ rs.id }}" onclick="return confirm('Emin misin?')" class="main-btn icon-btn"><i class="fa fa-close"></i> </a>
+                                                    </td>
+                                                </tr>
+                                            {% endfor %}
+                                            </tbody>
+                                            <tfoot>
+                                            <tr class="visible-xs">
+                                                <td class="text-center"><strong>Total 1.99</strong></td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2" class="hidden-xs"></td>
+                                                <td class="hidden-xs text-center"><strong>Total $1.99</strong></td>
+                                                <td><a href="#" class="btn btn-success btn-block">Checkout <i
+                                                        class="fa fa-angle-right"></i></a></td>
+                                            </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- about_area_end -->
+{% endblock %}

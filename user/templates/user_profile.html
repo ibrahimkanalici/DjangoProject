@@ -1,0 +1,71 @@
+{% extends "homebase.html" %}
+
+{% block title %} {{ profile.user.first_name }} Bilgileri {% endblock %}
+{% block keywords %} {{ setting.keywords }} {% endblock %}
+{% block description %} {{ setting.description }}{% endblock %}
+
+
+{% block head %}
+
+    <link rel='shortcut icon' type='image/x-icon' href='{{ setting.icon.url }}'/>
+{% endblock %}
+
+
+{% block content %}
+    <!-- about_area_start -->
+    <div class="section-top-border">
+        <div class="row">
+            <div class="col-md-4">
+                <h3 class="mb-20">Üye Paneli</h3>
+                <div class="typography">
+                    {% include 'user_panel.html' %}
+                </div>
+            </div>
+            <div class="col-md-4 mt-sm-30">
+                <h3 class="mb-20">Üye Bilgileri</h3>
+                <style>
+                    table, td, th {
+                        border: 1px solid #ddd;
+                        text-align: left;
+                    }
+
+                    table {
+                        border-collapse: collapse;
+                        width: 100%;
+                    }
+
+                    th, td {
+                        padding: 15px;
+                    }
+                </style>
+                <div class="col-md-4">
+                    <div class="single-defination">
+                        <h4 class="mb-20">Üye Resmi</h4>
+                        <div class="country"><img src="{{ profile.image.url }}" alt="flag"></div>
+
+                    </div>
+                </div>
+                <table>
+                    <tr>
+                        <th>Ad Soyad</th>
+                        <th>Email</th>
+                        <th>Telefon</th>
+                        <th>Adres</th>
+                        <th>Şehir</th>
+                        <th>Ülke</th>
+                    </tr>
+                    <tr>
+                        <td>{{ profile.user.first_name }}</td>
+                        <td>{{ profile.user.email }}</td>
+                        <td>{{ profile.phone }}</td>
+                        <td>{{ profile.address }}</td>
+                        <td>{{ profile.city }}</td>
+                        <td>{{ profile.country }}</td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+    </div>
+    <!-- about_area_end -->
+{% endblock %}

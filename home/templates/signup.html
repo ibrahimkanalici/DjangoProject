@@ -1,6 +1,6 @@
 {% extends "homebase.html" %}
 
-{% block title %} İletişim - {{ setting.company }} {% endblock %}
+{% block title %} Kayıt Sayfası {{ setting.company }} {% endblock %}
 {% block keywords %} {{ setting.keywords }} {% endblock %}
 {% block description %} {{ setting.description }}{% endblock %}
 
@@ -15,16 +15,28 @@
     <!-- about_area_start -->
     <div class="about_area">
         <div class="container">
-            <h3 class="title"> İletişim Formu</h3>
             <form action="" method="post">
-                {% csrf_token %}
-                {{ form.as_p }}
-                <input type="submit" value="SEND FORM">
+
+                <h3 class="title"> Üye Ol </h3>
+                <form method="post">
+                    {% csrf_token %}
+                {% for field in form %}
+                    <p>
+                        {{ field.label_tag }}<br>
+                        {{ field }}
+                        {% if field.help_text %}
+                            <small style = "color: grey">{{ field.help_text }}</small>
+                        {% endif %}
+                        {% for error in field.errors %}
+                            <p style="color: red"> {{ error }} </p>
+                        {% endfor %}
+                    </p>
+                {% endfor %}
+                    <button type="submit">Sign Up</button>
             </form>
             <div class="row align-items-center">
                 <div class="col-xl-6 col-lg-6 col-md-6">
                     <div class="about_thumb2">
-
                         {% if messages %}
                             {% for message in messages %}
                                 <div class="alert alert-{{ message.tags }}" role="alert">
@@ -33,17 +45,6 @@
                             {% endfor %}
                         {% endif %}
 
-                    </div>
-                </div>
-                <div class="col-xl-5 col-lg-5 offset-lg-1 col-md-6">
-                    <div class="about_info">
-                        <div class="section_title mb-20px">
-                            <span>İletişim</span>
-                        </div>
-                        {{ setting.contact | safe }}
-                        <div class="img_thumb">
-                            <img src="img/jessica-signature.png" alt="">
-                        </div>
                     </div>
                 </div>
             </div>

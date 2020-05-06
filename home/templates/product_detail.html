@@ -1,8 +1,8 @@
 {% extends "homebase.html" %}
 
-{% block title %} {{ productdata.title }}  {% endblock %}
-{% block keywords %} {{ productdata.keywords }} {% endblock %}
-{% block description %} {{ productdata.description }}{% endblock %}
+{% block title %} {{ product.title }}  {% endblock %}
+{% block keywords %} {{ product.keywords }} {% endblock %}
+{% block description %} {{ product.description }}{% endblock %}
 
 
 {% block head %}
@@ -19,7 +19,7 @@
                 <div class="preview col-md-6">
                     <div class="preview-pic tab-content">
 
-                        <div class="tab-pane active" id="pic-1"><img src="{{ productdata.image.url }}"></div>
+                        <div class="tab-pane active" id="pic-1"><img src="{{ product.image.url }}"></div>
 
                         {% for rs in images %}
                             <div class="tab-pane" id="pic-2"><img src="{{ rs.image.url }}"></div>
@@ -33,19 +33,102 @@
                     </ul>
                 </div>
                 <div class="details col-md-6">
-                    <h3 class="product-title">{{ productdata.title }}</h3>
-                    <p class="product-description">{{ productdata.description }}</p>
-                    <h4 class="price">Fiyat: <span>{{ productdata.price }}₺</span></h4>
-                    <div class="control-group">
-                        <label class="control-label"><span>Alacağınız Adet:</span></label>
-                        <input type="number" name="shopcart[quantity]" class="span6" value="1" placeholder="Qty" max="{{ product.amount }}">
-                    </div>
-                    <div class="action">
-                        <button class="add-to-cart btn btn-default" type="button">Sepete Ekle</button>
-                    </div>
+                    <h3 class="product-title">{{ product.title }}</h3>
+                    <p class="product-description">{{ product.description }}</p>
+                    <h4 class="price">Fiyat: <span>{{ product.price }}₺</span></h4>
+                    <form action="/order/addtocart/{{ product.id }}" method="post">
+                        {% csrf_token %}
+                        <div class="control-group">
+                            <label class="control-label"><span>Alacağınız Adet:</span></label>
+                            <input type="number" name="quantity" class="span6" min="0" value="1" placeholder="Qty"
+                                   max="{{ product.amount }}">
+                            <div class="action">
+                                <button class="add-to-cart btn btn-default" type="submit">Sepete Ekle</button>
+                                <a href="/order/addtocart/{{ rs.id }}" class="primary-btn add-to-cart"><i
+                                        class="fa fa-shopping-cart"></i> </a>
+                            </div>
+                        </div>
+                    </form>
+
                 </div>
             </div>
         </div>
+    </div>
+    <div class="comments-area">
+        <h4>Son Yorumlar</h4>
+
+        {% for rs in comments %}
+            <div class="comment-list">
+                <div class="single-comment justify-content-between d-flex">
+                    <div class="user justify-content-between d-flex">
+                        <div class="thumb">
+                            <img src="img/comment/comment_1.png" alt="">
+                        </div>
+                        <div class="desc">
+                            <p class="comment">
+                                {{ rs.comment }}
+                            </p>
+                            <div class="d-flex justify-content-between">
+                                <div class="d-flex align-items-center">
+                                    <h5>
+                                        <a href="#">{{ rs.user.first_name }}</a>
+                                    </h5>
+                                    <p class="date">{{ rs.create_at }} </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+
+    <div class="comment-form">
+        <h4>YORUM YAPIN</h4>
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert- {{ message.tags }}" role="alert">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+
+
+        <form class="form-contact comment_form" action="/product/addcomment/{{ product.id }}" method="post"
+              id="commentForm">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-group">
+                              <textarea class="form-control w-100" name="comment" id="comment" cols="30" rows="9"
+                                        placeholder="Yorumunuzu yazın"></textarea>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <input class="form-control" name="name" id="name" type="text" placeholder="İsim">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <input class="form-control" name="email" id="email" type="email" placeholder="E-mail">
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-group">
+                        <input class="form-control" name="website" id="website" type="text" placeholder="Konu">
+                    </div>
+                </div>
+            </div>
+            {% if user.id is not None %}
+                <div class="form-group">
+                    <button class="button button-contactForm btn_1 boxed-btn">GÖNDER</button>
+                </div>
+            {% else %}
+                Yorum Eklemek İçin <a href="/login"> Giriş Yapınız! </a>
+            {% endif %}
+        </form>
     </div>
     <!-- about_area_end -->
 
