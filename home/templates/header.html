@@ -48,13 +48,6 @@
                                             {% endif %}
                                         </ul>
                                     </li>
-                                    <li>
-                                        <div class="shopping-item">
-                                            <a href="/shopcart/"><span class="cart-amunt"></span> <i
-                                                    class="fa fa-shopping-cart"></i> <span
-                                                    class="product-count">{{ request.session.cart_items }}</span></a>
-                                        </div>
-                                    </li>
                                 </ul>
                             </nav>
                         </div>
@@ -99,6 +92,13 @@
                             <div class="main-menu  d-none d-lg-block">
                                 <nav>
                                     <ul>
+                                        <li>
+                                            <div class="shopping-item">
+                                                <a href="/shopcart/"><span class="cart-amunt"></span> <i
+                                                        class="fa fa-shopping-cart"></i> <span
+                                                        class="product-count">{{ request.session.cart_items }}</span></a>
+                                            </div>
+                                        </li>
                                         <li><a href="/hakkimizda">Hakkımızda</a></li>
                                         <li><a href="/referanslarimiz">Referanslar </a></li>
                                         <li><a href="/iletisim">İletişim</a></li>

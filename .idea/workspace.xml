@@ -2,32 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fe8dad19-f334-4715-86f3-22bbd954b159" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/home/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/home/templates/Shopcart_products.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/home/templates/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/home/templates/products_search.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/home/templates/signup.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/templates/user_panel.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/templates/user_profile.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order/templates/Order_Completed.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order/templates/Shopcart_products.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/templates/change_password.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/templates/user_update.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/home/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/Shopcart_products.html" beforeDir="false" afterPath="$PROJECT_DIR$/order/templates/Order_Form.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/homebase.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/homebase.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/templates/iletisim.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/iletisim.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/product_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/product_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/products.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/products.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/product/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/product/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/product/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/product/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project1/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/project1/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project1/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/project1/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/order/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/templates/user_panel.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/user_panel.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/templates/user_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/user_profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/urls.py" afterDir="false" />
     </list>
     <list id="a4d70ab5-030d-4a9a-89ab-f83def527754" name="ckeditör eklendi. Hakkımızda,iletişim ve referans sayfaları düzenlendi." comment="ckeditör eklendi. Hakkımızda,iletişim ve referans sayfaları düzenlendi." />
     <option name="SHOW_DIALOG" value="false" />
@@ -72,16 +60,16 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/home/templates" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/user" />
     <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Django\project1\user" />
+      <recent name="C:\Django\project1\order\templates" />
       <recent name="C:\Django\project1\home\templates" />
       <recent name="C:\Django\project1\order" />
       <recent name="C:\Django\project1\user\templates" />
-      <recent name="C:\Django\project1\user" />
-      <recent name="C:\Django\project1\home" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Django\project1\home\static\img\banner" />
@@ -154,7 +142,9 @@
       <workItem from="1588690897337" duration="224000" />
       <workItem from="1588693531009" duration="2000" />
       <workItem from="1588707681726" duration="2223000" />
-      <workItem from="1588735804822" duration="1574000" />
+      <workItem from="1588735804822" duration="2551000" />
+      <workItem from="1588773418516" duration="19549000" />
+      <workItem from="1588877144497" duration="19222000" />
     </task>
     <task id="LOCAL-00001" summary="Header değişti...">
       <created>1585414175980</created>
@@ -205,7 +195,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586642276767</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="19-30 arası videolar yapıldı.">
+      <created>1588737485907</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1588737485907</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -240,21 +237,22 @@
     <MESSAGE value="ckeditör eklendi. Hakkımızda,iletişim ve referans sayfaları düzenlendi." />
     <MESSAGE value="Contact form ve slider yapıldı." />
     <MESSAGE value="Alt kategori menü, kategori ürünleri gösterme, anasayfa ürünleri gösterme, ürün detay yapıldı." />
-    <option name="LAST_COMMIT_MESSAGE" value="Alt kategori menü, kategori ürünleri gösterme, anasayfa ürünleri gösterme, ürün detay yapıldı." />
+    <MESSAGE value="19-30 arası videolar yapıldı." />
+    <option name="LAST_COMMIT_MESSAGE" value="19-30 arası videolar yapıldı." />
   </component>
   <component name="WindowStateProjectService">
     <state x="828" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585413891846">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="828" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585413891846" />
-    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1588647830435">
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1588900755296">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1588647830435" />
-    <state x="985" y="113" width="871" height="827" key="CommitChangelistDialog2" timestamp="1586642273877">
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1588900755296" />
+    <state x="985" y="113" width="871" height="827" key="CommitChangelistDialog2" timestamp="1588737480742">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="985" y="113" width="871" height="827" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1586642273877" />
+    <state x="985" y="113" width="871" height="827" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1588737480742" />
     <state x="367" y="108" key="DiffContextDialog" timestamp="1585755912526">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -291,10 +289,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1288" y="439" key="VCS.ChangelistChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1585756414313" />
-    <state x="735" y="275" key="Vcs.Push.Dialog.v2" timestamp="1586642282271">
+    <state x="735" y="275" key="Vcs.Push.Dialog.v2" timestamp="1588737492447">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="735" y="275" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1586642282271" />
+    <state x="735" y="275" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1588737492447" />
     <state x="1249" y="440" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1586642165017">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -1,0 +1,189 @@
+{% extends "homebase.html" %}
+
+{% block title %} Shop Cart {% endblock %}
+{% block keywords %} {{ categorydata.keywords }} {% endblock %}
+{% block description %} {{ categorydata.description }}{% endblock %}
+
+
+{% block head %}
+
+    <link rel='shortcut icon' type='image/x-icon' href='{{ setting.icon.url }}'/>
+{% endblock %}
+
+
+{% block content %}
+    <!-- about_area_start -->
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        form {
+            border: 3px solid #f1f1f1;
+        }
+
+        input[type=text], input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        .cancelbtn {
+            width: auto;
+            padding: 10px 18px;
+            background-color: #f44336;
+        }
+
+        .imgcontainer {
+            text-align: center;
+            margin: 24px 0 12px 0;
+        }
+
+        img.avatar {
+            width: 40%;
+            border-radius: 50%;
+        }
+
+        .container {
+            padding: 16px;
+        }
+
+        span.psw {
+            float: right;
+            padding-top: 16px;
+        }
+
+        /* Change styles for span and cancel button on extra small screens */
+        @media screen and (max-width: 300px) {
+            span.psw {
+                display: block;
+                float: none;
+            }
+
+            .cancelbtn {
+                width: 100%;
+            }
+        }
+    </style>
+    <div class="about_area">
+        <div class="container">
+            <h3 class="title"> Sipariş İçin Bilgilerinizi Girin </h3>
+            <form action="" method="post">
+                {% csrf_token %}
+                    <label for="first_name"><b>Adınızı Giriniz</b></label>
+                    <input type="text" value="{{ user.first_name }}" name="first_name" required>
+
+                    <label for="last_name"><b>Soyadınızı Giriniz</b></label>
+                    <input type="text" value="{{ user.last_name }}" name="last_name" required>
+
+                    <label for="address"><b>Adresinizi Giriniz</b></label>
+                    <input type="text" value="{{ profile.address }}" name="address" required>
+
+                    <label for="phone"><b>Numara Giriniz</b></label>
+                    <input type="text" value="{{ profile.phone }}" name="phone"  required>
+
+                    <label for="city"><b>Şehir Giriniz</b></label>
+                    <input type="text" value="{{ profile.city }}" name="city"  required>
+
+                    <label for="country"><b>Ülke Giriniz</b></label>
+                    <input type="text" value="{{ profile.country }}" name="country" required>
+
+                    <div class="container">
+                        <br> <b><h3>Ödeme Bilgileri</h3></b><br>
+                        <div class="clearfix">
+                            <label for="email"><span><b>Kredi kart no :</b></span></label>
+                            <div class="input">
+                                <input tabindex="2" size="25" id="" name="kart_no" type="text" value=""
+                                       class="input-xlarge" placeholder="kart no giriniz">
+                            </div>
+                        </div>
+                        <div class="clearfix">
+                            <label for="uname"><span><b>kart SKT :</b></span></label>
+                            <div class="input">
+                                <input tabindex="2" size="25" id="" name="kart_skt" type="text" value=""
+                                       class="input-xlarge" placeholder="kart skt giriniz">
+                            </div>
+                        </div>
+                        <div class="clearfix">
+                            <label for="email"><span><b>Cvv No :</b></span></label>
+                            <div class="input">
+                                <input tabindex="2" size="25" id="" name="cvv" type="text" value=""
+                                       class="input-xlarge" placeholder="cvv no giriniz">
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="clearfix">
+                            <label for="email"><span><b>TUTAR :</b></span></label>
+                            <div class="input">
+                                <input tabindex="2" size="25" id="" name="tutar" readonly type="text"
+                                       value="{{ total }} TL" class="input-xlarge">
+                            </div>
+                        </div>
+
+                        <div class="clearfix">
+                            <label for="message"><span><b>Açıklama :</b></span></label>
+                            <div class="input">
+                                    <textarea tabindex="3" class="input-xlarge" id="message" name="aciklama" rows="7"
+                                              placeholder="Açıklama giriniz"></textarea>
+                            </div>
+                        </div>
+  <div class="product-content-right">
+                        <div class="woocommerce">
+                            <form action="#">
+                                <table cellspacing="0" class="shop_table cart">
+                                    <thead>
+                                        <tr>
+                                            <th class="product-thumbnail">&nbsp;</th>
+                                            <th class="product-name">Product</th>
+                                            <th class="product-price">Price</th>
+                                            <th class="product-quantity">Quantity</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </form>
+                        <button type="submit">Siparişi Tamamla</button>
+                    </div>
+
+            </form>
+            <div class="row align-items-center">
+                <div class="col-xl-6 col-lg-6 col-md-6">
+                    <div class="about_thumb2">
+
+                        {% if messages %}
+                            {% for message in messages %}
+                                <div class="alert alert-{{ message.tags }}" role="alert">
+                                    {{ message }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- about_area_end -->
+{% endblock %}
