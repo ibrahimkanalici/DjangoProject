@@ -89,24 +89,23 @@ class Images(models.Model):
 
 class Comment(models.Model):
     STATUS = (
-        ('New', 'Yeni'),
-        ('True', 'Evet'),
-        ('False', 'Hayır'),
+        ('New','Yeni'),
+        ('True','Evet'),
+        ('False','Hayır'),
     )
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     subject = models.CharField(max_length=50)
-    comment = models.TextField(blank=True, max_length=255)
-    status = models.CharField(max_length=10, choices=STATUS, default='New')
-    ip = models.CharField(blank=True, max_length=20)
+    comment = models.TextField(max_length=200)
+    status = models.CharField(max_length=10,choices=STATUS, default='New')
+    ip= models.CharField(max_length=50, blank=True)
     create_at = models.DateTimeField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now=True)
 
-    def __str__(self):
+    def _str_(self):
         return self.subject
-
 
 class CommentForm(ModelForm):
     class Meta:
         model = Comment
-        fields = ['subject', 'comment']
+        fields =['subject', 'comment']

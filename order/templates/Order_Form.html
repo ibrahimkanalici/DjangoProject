@@ -87,85 +87,86 @@
             <h3 class="title"> Sipariş İçin Bilgilerinizi Girin </h3>
             <form action="" method="post">
                 {% csrf_token %}
-                    <label for="first_name"><b>Adınızı Giriniz</b></label>
-                    <input type="text" value="{{ user.first_name }}" name="first_name" required>
+                <label for="first_name"><b>Adınızı Giriniz</b></label>
+                <input type="text" value="{{ user.first_name }}" name="first_name" required>
 
-                    <label for="last_name"><b>Soyadınızı Giriniz</b></label>
-                    <input type="text" value="{{ user.last_name }}" name="last_name" required>
+                <label for="last_name"><b>Soyadınızı Giriniz</b></label>
+                <input type="text" value="{{ user.last_name }}" name="last_name" required>
 
-                    <label for="address"><b>Adresinizi Giriniz</b></label>
-                    <input type="text" value="{{ profile.address }}" name="address" required>
+                <label for="address"><b>Adresinizi Giriniz</b></label>
+                <input type="text" value="{{ profile.address }}" name="address" required>
 
-                    <label for="phone"><b>Numara Giriniz</b></label>
-                    <input type="text" value="{{ profile.phone }}" name="phone"  required>
+                <label for="phone"><b>Numara Giriniz</b></label>
+                <input type="text" value="{{ profile.phone }}" name="phone" required>
 
-                    <label for="city"><b>Şehir Giriniz</b></label>
-                    <input type="text" value="{{ profile.city }}" name="city"  required>
+                <label for="city"><b>Şehir Giriniz</b></label>
+                <input type="text" value="{{ profile.city }}" name="city" required>
 
-                    <label for="country"><b>Ülke Giriniz</b></label>
-                    <input type="text" value="{{ profile.country }}" name="country" required>
+                <label for="country"><b>Ülke Giriniz</b></label>
+                <input type="text" value="{{ profile.country }}" name="country" required>
 
-                    <div class="container">
-                        <br> <b><h3>Ödeme Bilgileri</h3></b><br>
-                        <div class="clearfix">
-                            <label for="email"><span><b>Kredi kart no :</b></span></label>
-                            <div class="input">
-                                <input tabindex="2" size="25" id="" name="kart_no" type="text" value=""
-                                       class="input-xlarge" placeholder="kart no giriniz">
-                            </div>
+                <div class="container">
+                    <br> <b><h3>Ödeme Bilgileri</h3></b><br>
+                    <div class="clearfix">
+                        <label for="email"><span><b>Kredi kart no :</b></span></label>
+                        <div class="input">
+                            <input tabindex="2" size="25" id="" name="kart_no" type="text" value=""
+                                   class="input-xlarge" placeholder="kart no giriniz">
                         </div>
-                        <div class="clearfix">
-                            <label for="uname"><span><b>kart SKT :</b></span></label>
-                            <div class="input">
-                                <input tabindex="2" size="25" id="" name="kart_skt" type="text" value=""
-                                       class="input-xlarge" placeholder="kart skt giriniz">
-                            </div>
+                    </div>
+                    <div class="clearfix">
+                        <label for="uname"><span><b>kart SKT :</b></span></label>
+                        <div class="input">
+                            <input tabindex="2" size="25" id="" name="kart_skt" type="text" value=""
+                                   class="input-xlarge" placeholder="kart skt giriniz">
                         </div>
-                        <div class="clearfix">
-                            <label for="email"><span><b>Cvv No :</b></span></label>
-                            <div class="input">
-                                <input tabindex="2" size="25" id="" name="cvv" type="text" value=""
-                                       class="input-xlarge" placeholder="cvv no giriniz">
-                            </div>
+                    </div>
+                    <div class="clearfix">
+                        <label for="email"><span><b>Cvv No :</b></span></label>
+                        <div class="input">
+                            <input tabindex="2" size="25" id="" name="cvv" type="text" value=""
+                                   class="input-xlarge" placeholder="cvv no giriniz">
                         </div>
-                        <hr>
-                        <div class="clearfix">
-                            <label for="email"><span><b>TUTAR :</b></span></label>
-                            <div class="input">
-                                <input tabindex="2" size="25" id="" name="tutar" readonly type="text"
-                                       value="{{ total }} TL" class="input-xlarge">
-                            </div>
+                    </div>
+                    <hr>
+                    <div class="clearfix">
+                        <label for="email"><span><b>TUTAR :</b></span></label>
+                        <div class="input">
+                            <input tabindex="2" size="25" id="" name="tutar" readonly type="text"
+                                   value="{{ total }} TL" class="input-xlarge">
                         </div>
+                    </div>
 
-                        <div class="clearfix">
-                            <label for="message"><span><b>Açıklama :</b></span></label>
-                            <div class="input">
+                    <div class="clearfix">
+                        <label for="message"><span><b>Açıklama :</b></span></label>
+                        <div class="input">
                                     <textarea tabindex="3" class="input-xlarge" id="message" name="aciklama" rows="7"
                                               placeholder="Açıklama giriniz"></textarea>
-                            </div>
                         </div>
-  <div class="product-content-right">
+                    </div>
+                    <div class="product-content-right">
                         <div class="woocommerce">
                             <form action="#">
                                 <table cellspacing="0" class="shop_table cart">
                                     <thead>
-                                        <tr>
-                                            <th class="product-thumbnail">&nbsp;</th>
-                                            <th class="product-name">Product</th>
-                                            <th class="product-price">Price</th>
-                                            <th class="product-quantity">Quantity</th>
-                                        </tr>
+                                    <tr>
+                                        <th class="product-thumbnail">&nbsp;</th>
+                                        <th class="product-name">Product</th>
+                                        <th class="product-price">Price</th>
+                                        <th class="product-quantity">Quantity</th>
+                                    </tr>
                                     </thead>
 
                                     <tbody>
-                                        <tr>
-                                        </tr>
+                                    <tr>
+                                    </tr>
                                     </tbody>
                                 </table>
                             </form>
-                        <button type="submit">Siparişi Tamamla</button>
+                            <button type="submit">Siparişi Tamamla</button>
+                        </div>
                     </div>
-
+                </div>
             </form>
             <div class="row align-items-center">
                 <div class="col-xl-6 col-lg-6 col-md-6">

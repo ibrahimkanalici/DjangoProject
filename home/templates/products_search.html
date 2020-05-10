@@ -15,36 +15,34 @@
     <!-- about_area_start -->
 
     {% for rs in products %}
-        <div class="best_burgers_area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="Burger_President_area">
-                            <div class="Burger_President_here">
-                                <div class="single_Burger_President">
-                                    <table cellpadding="3" width="1200">
-                                        <tr>
-                                            <th>Image</th>
-                                            <th>Product Name</th>
-                                            <th>Category</th>
-                                            <th>Price</th>
-                                        </tr>
-                                        {% for rs in products %}
-                                            <tr>
-                                                <td><a href="/product/{{ rs.id }}/{{ rs.slug }}"> <img
-                                                        src="{{ rs.image.url }}" style="..." alt=""> </a></td>
-                                                <td><h4 class="product-name"><a
-                                                        href="/product/{{ rs.id }}/{{ rs.slug }}"> {{ rs.title }} </a>
-                                                </h4></td>
-                                                <td>
-                                                    <a href="/category/{{ rs.category.id }}/{{ rs.category.slug }}"> {{ rs.category }} </a>
-                                                </td>
-                                                <td><h4>{{ rs.price }}₺ </h4></td>
-                                            </tr>
-                                        {% endfor %}
-                                    </table>
+        <div class="about_area">
 
-                                </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="Burger_President_area">
+                        <div class="Burger_President_here">
+                            <div class="single_Burger_President">
+                                <table cellpadding="3" width="1200">
+                                    <tr>
+                                        <th>Image</th>
+                                        <th>Product Name</th>
+                                        <th>Category</th>
+                                        <th>Price</th>
+                                    </tr>
+                                    {% for rs in products %}
+                                        <tr>
+                                            <td><a href="/product/{{ rs.id }}/{{ rs.slug }}"> <img
+                                                    src="{{ rs.image.url }}" style="..." alt=""> </a></td>
+                                            <td><h4 class="product-name"><a
+                                                    href="/product/{{ rs.id }}/{{ rs.slug }}"> {{ rs.title }} </a>
+                                            </h4></td>
+                                            <td>
+                                                <a href="/category/{{ rs.category.id }}/{{ rs.category.slug }}"> {{ rs.category }} </a>
+                                            </td>
+                                            <td><h4>{{ rs.price }}₺ </h4></td>
+                                        </tr>
+                                    {% endfor %}
+                                </table>
                             </div>
                         </div>
                     </div>
@@ -53,10 +51,6 @@
         </div>
     {% endfor %}
 
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
+
     <!-- about_area_end -->
 {% endblock %}

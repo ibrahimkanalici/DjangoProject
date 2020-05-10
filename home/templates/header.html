@@ -22,7 +22,6 @@
                                                            aria-expanded="true" {% endif %}
                                                            href="/category/{{ node.id }}/{{ node.slug }}"> {{ node.title }}</a>
                                                         {% if not node.is_leaf_node %}
-
                                                             <ul class="dropdown-menu pull-menu-right">
                                                                 <li>
                                                                     <a href="/category/{{ node.slug }}">{{ children }}</a>
@@ -39,8 +38,8 @@
                                         <ul class="submenu">
                                             {% if user.id is not None %}
                                                 <li><a href="/user">{{ user.first_name }}</a></li>
-                                                <li><a href="/shopcart/"> Siparişlerim </a></li>
-                                                <li><a href="#"> Yorumlarım </a></li>
+                                                <li><a href="/user/orders"> Siparişlerim </a></li>
+                                                <li><a href="/user/comments"> Yorumlarım </a></li>
                                                 <li><a href="/logout/"> Çıkış Yap </a></li>
                                             {% else %}
                                                 <li><a href="/login/">Giriş Yap</a></li>

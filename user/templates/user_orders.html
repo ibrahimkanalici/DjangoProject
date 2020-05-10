@@ -1,0 +1,68 @@
+{% extends "homebase.html" %}
+
+{% block title %} {{ user.first_name }}'in Siparişleri {% endblock %}
+{% block keywords %} {{ setting.keywords }} {% endblock %}
+{% block description %} {{ setting.description }}{% endblock %}
+
+
+{% block head %}
+
+    <link rel='shortcut icon' type='image/x-icon' href='{{ setting.icon.url }}'/>
+{% endblock %}
+
+
+{% block content %}
+    <!-- about_area_start -->
+    <div class="section-top-border">
+        <div class="row">
+            <div class="col-md-4">
+                <h3 class="mb-20">Siparişlerim</h3>
+                <div class="typography">
+                    {% include 'user_panel.html' %}
+                </div>
+            </div>
+            <div class="col-md-4 mt-sm-30">
+                <h3 class="mb-20">Üye Bilgileri</h3>
+                <style>
+                    table, td, th {
+                        border: 1px solid #ddd;
+                        text-align: left;
+                    }
+
+                    table {
+                        border-collapse: collapse;
+                        width: 100%;
+                    }
+
+                    th, td {
+                        padding: 15px;
+                    }
+                </style>
+            </div>
+            <div class="container">
+                <table>
+                    <tr>
+                        <th>Id</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Total</th>
+                        <th>Status</th>
+                        <th>Detail</th>
+                    </tr>
+                    {% for rs in orders %}
+                        <tr>
+                            <td>{{ rs.id }}</td>
+                            <td>{{ rs.first_name }}</td>
+                            <td>{{ rs.last_name }}</td>
+                            <td>{{ rs.total }}</td>
+                            <td>{{ rs.status }}</td>
+                            <td class="text-left"><a class="genric-btn primary"
+                                                     href="/user/orderdetail/{{ rs.id }}">Detay</a></td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- about_area_end -->
+{% endblock %}

@@ -85,7 +85,7 @@
 
 
     <div class="comment-form">
-        <h4>YORUM YAPIN</h4>
+
         {% if messages %}
             {% for message in messages %}
                 <div class="alert alert- {{ message.tags }}" role="alert">
@@ -94,41 +94,42 @@
             {% endfor %}
         {% endif %}
 
+        <div class="about_area">
+            <h4>YORUM YAPIN</h4>
+            <div class="comment-form" style="margin-left: 10px">
+                <form action="/product/addcomment/{{ product.id }}" method="post">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <input class="input" type="text" name="subject" id="id_subject" placeholder="Konu"/>
+                            </div> <!-- end .form-group -->
+                        </div> <!-- end .col-sm-6 -->
+                        <div class="col-sm-6">
+                            <div class="form-group">
 
-        <form class="form-contact comment_form" action="/product/addcomment/{{ product.id }}" method="post"
-              id="commentForm">
-            {% csrf_token %}
-            <div class="row">
-                <div class="col-12">
+                            </div> <!-- end .form-group -->
+                        </div> <!-- end .col-sm-6 -->
+                    </div> <!-- end .row -->
                     <div class="form-group">
-                              <textarea class="form-control w-100" name="comment" id="comment" cols="30" rows="9"
-                                        placeholder="Yorumunuzu yazın"></textarea>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="form-group">
-                        <input class="form-control" name="name" id="name" type="text" placeholder="İsim">
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="form-group">
-                        <input class="form-control" name="email" id="email" type="email" placeholder="E-mail">
-                    </div>
-                </div>
-                <div class="col-12">
-                    <div class="form-group">
-                        <input class="form-control" name="website" id="website" type="text" placeholder="Konu">
-                    </div>
-                </div>
+                        <textarea class="input" name="comment" id="id_comment" required
+                                  placeholder="Mesajınız"></textarea>
+                    </div> <!-- end .form-group -->
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-{{ message.tags }}" role="alert">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                    {% if user.id is not None %}
+                        <input type="submit" value="Gönder" class="button solid light-blue"/>
+                    {% else %}
+                        Yorum eklemek için <a href="/login"> Üye Olunuz!</a>
+                    {% endif %}
+                </form>
             </div>
-            {% if user.id is not None %}
-                <div class="form-group">
-                    <button class="button button-contactForm btn_1 boxed-btn">GÖNDER</button>
-                </div>
-            {% else %}
-                Yorum Eklemek İçin <a href="/login"> Giriş Yapınız! </a>
-            {% endif %}
-        </form>
+        </div>
     </div>
     <!-- about_area_end -->
 

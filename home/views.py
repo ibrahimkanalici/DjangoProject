@@ -1,11 +1,10 @@
-from ckeditor_uploader.forms import SearchForm
 from django.contrib import messages
 from django.contrib.auth import logout, authenticate, login
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 
 # Create your views here.
-from home.forms import SignUpForm
+from home.forms import SignUpForm, SearchForm
 from home.models import Setting, ContactFormu, ContactFormMessage
 from order.models import ShopCart
 from product.models import Product, Category, Images, Comment
@@ -104,6 +103,7 @@ def product_search(request):
             context = {
                 'products': products,
                 'category': category,
+                'query': query,
             }
             return render(request, 'products_search.html', context)
 
@@ -164,7 +164,7 @@ def signup_view(request):
     form = SignUpForm()
     category = Category.objects.all()
     context = {
-            'category': category,
-            'form': form,
-        }
+        'category': category,
+        'form': form,
+    }
     return render(request, 'signup.html', context)

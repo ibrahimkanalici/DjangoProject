@@ -1,0 +1,88 @@
+{% extends "homebase.html" %}
+
+{% block title %} Sipariş Detayı {% endblock %}
+{% block keywords %} {{ setting.keywords }} {% endblock %}
+{% block description %} {{ setting.description }}{% endblock %}
+
+
+{% block head %}
+
+    <link rel='shortcut icon' type='image/x-icon' href='{{ setting.icon.url }}'/>
+{% endblock %}
+
+
+{% block content %}
+    <!-- about_area_start -->
+    <div class="section-top-border">
+        <div class="row">
+            <div class="col-md-4">
+                <h3 class="mb-20">Üye Paneli</h3>
+                <div class="typography">
+                    {% include 'user_panel.html' %}
+                </div>
+            </div>
+            <div class="col-md-4 mt-sm-30">
+                <h3 class="mb-20">Kargo Bilgileri</h3>
+                <table>
+                    <tr>
+                        <th>Ad Soyad</th>
+                        <th>Telefon</th>
+                        <th>Adres</th>
+                        <th>Şehir</th>
+                        <th>Bilgi</th>
+                        <th>Durum</th>
+                    </tr>
+                    <tr>
+                        <td>{{ order.user_name }}</td>
+                        <td>{{ order.phone }}</td>
+                        <td>{{ order.address }}</td>
+                        <td>{{ order.city }}</td>
+                        <td>{{ order.adminnote }}</td>
+                        <td>{{ order.status }}</td>
+                    </tr>
+                </table>
+                <style>
+                    table, td, th {
+                        border: 1px solid #ddd;
+                        text-align: left;
+                    }
+
+                    table {
+                        border-collapse: collapse;
+                        width: 100%;
+                    }
+
+                    th, td {
+                        padding: 15px;
+                    }
+                </style>
+            </div>
+            <div class="container">
+                <h3 class="mb-20">Sipariş Detayı</h3>
+                <table>
+                    <tr>
+                        <th>Id</th>
+                        <th>Ürün Adı</th>
+                        <th>Ücreti</th>
+                        <th>Miktarı</th>
+                        <th>Adet</th>
+                    </tr>
+                    {% for rs in orderitems %}
+                        <tr>
+                            <td>
+                                <a href="/product/{{ rs.product.id }}/{{ rs.product.slug }}">
+                                    <img src="{{ rs.product.image.url }}" height="80">
+                                </a>
+                            </td>
+                            <td>{{ rs.product.title }}</td>
+                            <td>{{ rs.price }}</td>
+                            <td>{{ rs.quantity }}</td>
+                            <td>{{ rs.amount }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- about_area_end -->
+{% endblock %}
