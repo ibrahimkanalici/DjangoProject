@@ -5,7 +5,7 @@ from django.shortcuts import render
 
 # Create your views here.
 from home.forms import SignUpForm, SearchForm
-from home.models import Setting, ContactFormu, ContactFormMessage
+from home.models import Setting, ContactFormu, ContactFormMessage, FAQ, UserProfile
 from order.models import ShopCart
 from product.models import Product, Category, Images, Comment
 import json
@@ -168,3 +168,21 @@ def signup_view(request):
         'form': form,
     }
     return render(request, 'signup.html', context)
+
+
+def faq(request):
+    category = Category.objects.all()
+    faq = FAQ.objects.all().order_by('ordernumber')
+    context = {
+        'category': category,
+        'faq': faq,
+    }
+    return render(request, 'faq.html', context)
+
+def instagram(request):
+    category = Category.objects.all()
+    insta = instagram.objects.all()
+    context = {'category': category,
+               'insta': insta,
+               }
+    return render(request, '', context)

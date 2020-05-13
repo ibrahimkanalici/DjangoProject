@@ -14,15 +14,13 @@
 {% block content %}
     <!-- about_area_start -->
     {% for rs in products %}
-
-
         <div class="Burger_President_area">
             <div class="Burger_President_here">
                 <div class="single_Burger_President">
-                    <div class="room_thumb">
+                    <div class="room_thumb" style="">
                         <img src="{{ rs.image.url }}" alt="">
                         <div class="room_heading d-flex justify-content-between align-items-center">
-                            <div class="room_heading_inner">
+                            <div class="room_heading_inner" style="margin-bottom: 36px">
                                 <span>{{ rs.price }}₺</span>
                                 <h3>{{ rs.title }}</h3>
                                 <p>{{ rs.description }}</p>
@@ -34,17 +32,6 @@
                 </div>
             </div>
         </div>
-
-
-
-
-
-
-
-
-
     {% endfor %}
-
-
     <!-- about_area_end -->
 {% endblock %}
