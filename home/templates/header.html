@@ -11,7 +11,7 @@
                             <nav>
                                 <ul id="navigation">
                                     <li><a class="active" href="/home">Anasayfa</a></li>
-                                    <li><a href="#">Restoran <i class="ti-angle-down"></i></a>
+                                    <li><a>Restoran <i class="ti-angle-down"></i></a>
                                         <ul class="submenu">
                                             {% load mptt_tags %}
                                             <ul>
@@ -34,7 +34,7 @@
                                             </ul>
                                         </ul>
                                     </li>
-                                    <li><a href="#">Üyelik <img src="{{ request.user.profile.image.url }}"></a>
+                                    <li><a>Üyelik Bilgileri<img src="{{ request.user.profile.image.url }}"></a>
                                         <ul class="submenu">
                                             {% if user.id is not None %}
                                                 <li><a href="/user">{{ user.first_name }}</a></li>
@@ -65,6 +65,7 @@
                         function AutoCompleteSelectHandler(event, ui) {
                             var selectedObj = ui.item;
                         }
+
                     </script>
                     <!----Search -->
                     <div class="col-xl-2 col-lg-2">
@@ -72,12 +73,27 @@
                             <aside class="single_sidebar_widget search_widget">
                                 <form action="/search/" method="post">
                                     {% csrf_token %}
+
                                     <div class="form-group">
                                         <div class="input-group mb-3">
                                             <input id="query" name="query" type="text" class="form-control"
                                                    placeholder="Ara ki Bulasın">
                                         </div>
                                     </div>
+                                    {% load mptt_tags %}
+
+                                    <select name="catid" class="input search-categories">
+                                        <option value="0">Tüm Kategoriler</option>
+                                        {% recursetree category %}
+                                            {% if node.is_leaf_node %}
+                                                <option value="{{ node.id }}">{{ node.title }}</option> {% endif %}
+                                            {% if not node.is_leaf_node %}
+                                                <optgroup label="{{ node.title }}">
+                                                    {{ children }}
+                                                </optgroup>
+                                            {% endif %}
+                                        {% endrecursetree %}
+                                    </select>
                                     <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn">Hemen
                                         Ara
                                     </button>

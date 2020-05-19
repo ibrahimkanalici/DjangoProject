@@ -113,11 +113,3 @@ class FAQ(models.Model):
     def __str__(self):
         return self.question
 
-class instagram(models.Model):
-
-    instagram = models.CharField(max_length=150)
-    twitter = models.CharField(max_length=150)
-
-
-    def __str__(self):
-        return self.instagram

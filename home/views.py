@@ -99,11 +99,15 @@ def product_search(request):
         if form.is_valid():
             category = Category.objects.all()
             query = form.cleaned_data['query']
-            products = Product.objects.filter(title__icontains=query)
+            catid = form.cleaned_data['catid']
+
+            if catid == 0:
+                products = Product.objects.filter(title__icontains=query)
+            else:
+                products = Product.objects.filter(title__icontains=query, category_id=catid)
             context = {
                 'products': products,
                 'category': category,
-                'query': query,
             }
             return render(request, 'products_search.html', context)
 
@@ -113,7 +117,7 @@ def product_search(request):
 def product_search_auto(request):
     if request.is_ajax():
         q = request.GET.get('term', '')
-        product = Product.objects.filter(city__icontains=q)
+        product = Product.objects.filter(title__icontains=q)
         results = []
         for rs in product:
             product_json = {}
@@ -159,6 +163,13 @@ def signup_view(request):
             password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=password)
             login(request, user)
+
+            current_user = request.user
+            data = UserProfile()
+            data.user_id = current_user.id
+            data.image = "images/users/user.png"
+            data.save()
+
             return HttpResponseRedirect('/')
 
     form = SignUpForm()
@@ -178,11 +189,3 @@ def faq(request):
         'faq': faq,
     }
     return render(request, 'faq.html', context)
-
-def instagram(request):
-    category = Category.objects.all()
-    insta = instagram.objects.all()
-    context = {'category': category,
-               'insta': insta,
-               }
-    return render(request, '', context)
